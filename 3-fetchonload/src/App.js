@@ -20,6 +20,8 @@ function App() {
 
   const fetchNextUser = () => {
     fetchRandomData(nextPageNumber).then(randomData => {
+      if (randomData === undefined) return;
+
       const newUserInfos = [
         ...userInfos,
         ...randomData.results,
